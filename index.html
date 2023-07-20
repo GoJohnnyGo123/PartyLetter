@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Party Invitation</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Set a fixed width and height for the images */
+    .w3-col img {
+      width: 400px;
+      height: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div class="w3-container w3-center">
+    <h2>Can you match the pictures with the right names?</h2>
+    <div class="w3-row">
+      <div class="w3-col s3">
+        <img src="C:\Users\ondra\Desktop\rakosnicek.jpg" alt="Image 1">
+        <input type="text" id="nameInput1" placeholder="Enter name">
+      </div>
+      <div class="w3-col s3">
+        <img src="C:\Users\ondra\Desktop\rumcajs.jpg" alt="Image 2">
+        <input type="text" id="nameInput2" placeholder="Enter name">
+      </div>
+      <div class="w3-col s3">
+        <img src="C:\Users\ondra\Desktop\kremilek.jpg" alt="Image 3">
+        <input type="text" id="nameInput3" placeholder="Enter name">
+      </div>
+      <div class="w3-col s3">
+        <img src="C:\Users\ondra\Desktop\racochejl.jpg" alt="Image 4">
+        <input type="text" id="nameInput4" placeholder="Enter name">
+      </div>
+    </div>
+    <button class="w3-btn w3-blue" onclick="checkAnswers()">Submit</button>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const correctNames = ["Name1", "Name2", "Name3", "Name4"];
+      const inputs = document.querySelectorAll("input[type='text']");
+      let allCorrect = true;
+
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim().toLowerCase() !== correctNames[i].toLowerCase()) {
+          allCorrect = false;
+          break;
+        }
+      }
+
+      if (allCorrect) {
+        showInvitation();
+      } else {
+        alert("Sorry, not all names are correct. Try again!");
+      }
+    }
+
+    function showInvitation() {
+      // Replace this with the URL of your actual invitation letter or content
+      const invitationURL = "https://www.yourpartyinvitationlink.com";
+      window.location.href = invitationURL;
+    }
+  </script>
+</body>
+</html>
